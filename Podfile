@@ -6,6 +6,11 @@ target 'ProyectoModulo1-5G' do
   use_frameworks!
 
   # Pods for ProyectoModulo1-5G
+
+  pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI'
+
 end
