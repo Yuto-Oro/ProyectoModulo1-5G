@@ -24,6 +24,9 @@
                                 <state key="normal" title="Autenticar Usuario">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="kG6-Bc-C9j" kind="show" id="1wC-sg-Zzg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToK-hr-nAy">
                                 <rect key="frame" x="48" y="482" width="321" height="44"/>
@@ -42,6 +45,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rsq-mU-EDi">
+            <objects>
+                <viewController id="kG6-Bc-C9j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHB-v8-bdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1E9-Kv-Dd5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cyh-pw-bje"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZB-Bp-87g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="874"/>
         </scene>
     </scenes>
     <resources>

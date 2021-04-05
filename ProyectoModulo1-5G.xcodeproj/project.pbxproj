@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14E15602261AA7660054748B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E15601261AA7660054748B /* GoogleService-Info.plist */; };
 		14E15607261AB0B70054748B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E15606261AB0B70054748B /* LoginViewController.swift */; };
+		14E15630261AB8F80054748B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E1562F261AB8F80054748B /* WelcomeViewController.swift */; };
 		6EC066B5A954E1082A6F98BE /* Pods_ProyectoModulo1_5G.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6160238C30D485D3BAEE86F /* Pods_ProyectoModulo1_5G.framework */; };
 		9295332A261A966600C8A7FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92953329261A966600C8A7FB /* AppDelegate.swift */; };
 		9295332C261A966600C8A7FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295332B261A966600C8A7FB /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		14E15601261AA7660054748B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14E15606261AB0B70054748B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		14E1562F261AB8F80054748B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2CE1A89670471B829D1B07EB /* Pods-ProyectoModulo1-5G.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoModulo1-5G.release.xcconfig"; path = "Target Support Files/Pods-ProyectoModulo1-5G/Pods-ProyectoModulo1-5G.release.xcconfig"; sourceTree = "<group>"; };
 		46263A3A2460BBC363262F20 /* Pods-ProyectoModulo1-5G.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoModulo1-5G.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoModulo1-5G/Pods-ProyectoModulo1-5G.debug.xcconfig"; sourceTree = "<group>"; };
 		92953326261A966600C8A7FB /* ProyectoModulo1-5G.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProyectoModulo1-5G.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 			children = (
 				9295332D261A966600C8A7FB /* MainViewController.swift */,
 				14E15606261AB0B70054748B /* LoginViewController.swift */,
+				14E1562F261AB8F80054748B /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14E15607261AB0B70054748B /* LoginViewController.swift in Sources */,
+				14E15630261AB8F80054748B /* WelcomeViewController.swift in Sources */,
 				9295332E261A966600C8A7FB /* MainViewController.swift in Sources */,
 				9295332A261A966600C8A7FB /* AppDelegate.swift in Sources */,
 				9295332C261A966600C8A7FB /* SceneDelegate.swift in Sources */,
