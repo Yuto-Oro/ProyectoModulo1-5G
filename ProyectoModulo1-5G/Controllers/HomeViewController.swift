@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import FirebaseStorage
 
-class HomeViewController: UITabBarController {
-
+class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    var photosController: PhotoCollectionViewController!
+    var secondController: NewImageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.delegate = self
         guard let PhotosControllerTemp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PhotoCollectionViewController") as? PhotoCollectionViewController else{ return }
         let PhotosController = UINavigationController(rootViewController: PhotosControllerTemp)
         
@@ -19,9 +22,58 @@ class HomeViewController: UITabBarController {
         PhotosController.tabBarItem.image = UIImage(systemName: "doc.richtext")
         
         
+        let controller2 = NewImageViewController()
+        controller2.tabBarItem.title = "Add new photo"
+        controller2.tabBarItem.image = UIImage(systemName: "doc.richtext")
+
         viewControllers = [
-        PhotosController
+        PhotosController,
+            controller2
         ]
-            }
+    }
     
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.isKind(of: NewImageViewController.self) {
+            let userImagePicker = UIImagePickerController()
+            userImagePicker.delegate = self
+            userImagePicker.sourceType = .photoLibrary
+            userImagePicker.mediaTypes = ["public.image"]
+            present(userImagePicker, animated: true, completion: nil)
+            return false
+         }
+         return true
+       }
+    
+    
+    func uploadImage(imageData: Data, name: String){
+        let storageRef = Storage.storage().reference()
+        let imageRef =
+            storageRef.child("photos").child(name)
+        let uploadMetadata = StorageMetadata()
+        
+        uploadMetadata.contentType = "image/jpeg"
+        
+        imageRef.putData(imageData, metadata: uploadMetadata) { (metadata, error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else{
+                print("Image metadata: \(String(describing: metadata))")
+            }
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let userImage = info[UIImagePickerController.InfoKey.originalImage] as?
+            UIImage, let optimizedImageData =
+                userImage.jpegData(compressionQuality: 0.6){
+            
+            
+            guard let fileUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL else { return }
+            uploadImage(imageData: optimizedImageData, name: "\(fileUrl.lastPathComponent)")
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
+
