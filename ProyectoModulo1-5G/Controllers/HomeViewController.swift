@@ -25,10 +25,17 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImag
         let controller2 = NewImageViewController()
         controller2.tabBarItem.title = "Add new photo"
         controller2.tabBarItem.image = UIImage(systemName: "doc.richtext")
+        
+        
+        guard let ProfileController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController else{ return }
+        ProfileController.tabBarItem.title = "Perfil"
+        ProfileController.tabBarItem.image = UIImage(systemName: "doc.richtext")
+       
 
         viewControllers = [
         PhotosController,
-            controller2
+        controller2,
+        ProfileController
         ]
     }
     
