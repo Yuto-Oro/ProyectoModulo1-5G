@@ -49,16 +49,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func getName(_ userID: String) {
-        let result = getRef.collection("users").document(userID)
-        result.getDocument { (snapshot, error) in
-            print(snapshot!)
-            print(snapshot!.get("lastName"))
-            let lastname = snapshot?.get("lastName") as? String ?? "sin valor"
-            print("documento: ", lastname)
-            let name = snapshot?.get("firstName") as? String ?? "sin valor"
-
-            self.nameLabel.text = "\(name) \(lastname)"
-            
+        _ = getRef.collection("users").whereField("uid", isEqualTo: userID).addSnapshotListener {
+            (querySnapshot, error) in
+            if let error = error {
+                print(error)
+            } else {
+                for document in querySnapshot!.documents {
+                    let docData = document.data()
+                    let firstname = docData["firstName"] as? String ?? "Sin Valor"
+                    let lastname = docData["lastName"] as? String ?? "Sin  Valor"
+                    
+                    self.nameLabel.text = "\(firstname) \(lastname)"
+                }
+            }
         }
     }
     
