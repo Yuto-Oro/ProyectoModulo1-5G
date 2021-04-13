@@ -293,24 +293,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-gh-O7y">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-gh-O7y">
                                 <rect key="frame" x="40" y="84" width="334" height="738"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3O-Uq-M3k">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="128"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-el-1AM">
-                                        <rect key="frame" x="0.0" y="228" width="334" height="237"/>
+                                        <rect key="frame" x="0.0" y="208" width="334" height="167"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k6-sg-Rhx">
-                                        <rect key="frame" x="0.0" y="565" width="334" height="23"/>
+                                        <rect key="frame" x="0.0" y="455" width="334" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwT-qQ-yUt">
+                                        <rect key="frame" x="0.0" y="558" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AK7-a3-UmS"/>
+                                        </constraints>
+                                        <state key="normal" title="Change Profile Picture"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tst-lE-tia">
                                         <rect key="frame" x="0.0" y="688" width="334" height="50"/>
                                         <constraints>
@@ -337,6 +344,7 @@
                         <outlet property="emailLabel" destination="6k6-sg-Rhx" id="vUP-NY-2Gb"/>
                         <outlet property="nameLabel" destination="eYA-el-1AM" id="KTm-rk-bfh"/>
                         <outlet property="profileImage" destination="z3O-Uq-M3k" id="rhg-GB-Iqz"/>
+                        <outlet property="profilePicButton" destination="PwT-qQ-yUt" id="y9d-oD-NKi"/>
                         <outlet property="signOutButton" destination="Tst-lE-tia" id="s5z-P4-60V"/>
                     </connections>
                 </viewController>

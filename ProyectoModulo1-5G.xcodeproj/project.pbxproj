@@ -12,7 +12,7 @@
 		14E1563E261E23310054748B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E1563D261E23310054748B /* HomeViewController.swift */; };
 		14E15642261E2FC50054748B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E15641261E2FC50054748B /* Constants.swift */; };
 		14E15645261E2FCE0054748B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E15644261E2FCE0054748B /* Utilities.swift */; };
-		14E15653262506DF0054748B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E15652262506DF0054748B /* GoogleService-Info.plist */; };
+		14E15659262536170054748B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E15658262536170054748B /* GoogleService-Info.plist */; };
 		6EC066B5A954E1082A6F98BE /* Pods_ProyectoModulo1_5G.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6160238C30D485D3BAEE86F /* Pods_ProyectoModulo1_5G.framework */; };
 		9295332A261A966600C8A7FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92953329261A966600C8A7FB /* AppDelegate.swift */; };
 		9295332C261A966600C8A7FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295332B261A966600C8A7FB /* SceneDelegate.swift */; };
@@ -32,7 +32,7 @@
 		14E1563D261E23310054748B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14E15641261E2FC50054748B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14E15644261E2FCE0054748B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		14E15652262506DF0054748B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14E15658262536170054748B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CE1A89670471B829D1B07EB /* Pods-ProyectoModulo1-5G.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoModulo1-5G.release.xcconfig"; path = "Target Support Files/Pods-ProyectoModulo1-5G/Pods-ProyectoModulo1-5G.release.xcconfig"; sourceTree = "<group>"; };
 		46263A3A2460BBC363262F20 /* Pods-ProyectoModulo1-5G.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoModulo1-5G.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoModulo1-5G/Pods-ProyectoModulo1-5G.debug.xcconfig"; sourceTree = "<group>"; };
 		92953326261A966600C8A7FB /* ProyectoModulo1-5G.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProyectoModulo1-5G.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +131,7 @@
 				9295332F261A966600C8A7FB /* Main.storyboard */,
 				92953332261A966800C8A7FB /* Assets.xcassets */,
 				92953334261A966800C8A7FB /* LaunchScreen.storyboard */,
-				14E15652262506DF0054748B /* GoogleService-Info.plist */,
+				14E15658262536170054748B /* GoogleService-Info.plist */,
 				92953337261A966800C8A7FB /* Info.plist */,
 			);
 			path = "ProyectoModulo1-5G";
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92953336261A966800C8A7FB /* LaunchScreen.storyboard in Resources */,
-				14E15653262506DF0054748B /* GoogleService-Info.plist in Resources */,
+				14E15659262536170054748B /* GoogleService-Info.plist in Resources */,
 				92953333261A966800C8A7FB /* Assets.xcassets in Resources */,
 				92953331261A966600C8A7FB /* Main.storyboard in Resources */,
 			);
