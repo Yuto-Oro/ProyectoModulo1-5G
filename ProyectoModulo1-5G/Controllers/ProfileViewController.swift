@@ -23,12 +23,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
+    @IBOutlet weak var profilePicButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Utilities.styleFilledButton(signOutButton)
-
+        setUpElements()
+        
         getRef = Firestore.firestore()
         Auth.auth().addStateDidChangeListener{ (auth, user) in
             self.getPhoto()
@@ -40,6 +41,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.getName(self.userId)
             }
         }
+    }
+    
+    func setUpElements() {
+        Utilities.styleFilledButtonRed(signOutButton)
+        Utilities.styleFilledButtonBlue(profilePicButton)
     }
     
     func getName(_ userID: String) {

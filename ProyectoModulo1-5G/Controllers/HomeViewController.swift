@@ -19,19 +19,19 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImag
 //        let PhotosController = UINavigationController(rootViewController: PhotosControllerTemp)
         
         
-        PhotosControllerTemp.tabBarItem.title = "Fotos"
-        PhotosControllerTemp.tabBarItem.image = UIImage(systemName: "doc.richtext")
+        PhotosControllerTemp.tabBarItem.title = "Photos"
+        PhotosControllerTemp.tabBarItem.image = UIImage(systemName: "photo.on.rectangle.angled")
         
         photosController = PhotosControllerTemp
         
         let controller2 = NewImageViewController()
         controller2.tabBarItem.title = "Add new photo"
-        controller2.tabBarItem.image = UIImage(systemName: "doc.richtext")
+        controller2.tabBarItem.image = UIImage(systemName: "plus.app.fill")
         
         
         guard let ProfileController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController else{ return }
-        ProfileController.tabBarItem.title = "Perfil"
-        ProfileController.tabBarItem.image = UIImage(systemName: "doc.richtext")
+        ProfileController.tabBarItem.title = "Profile"
+        ProfileController.tabBarItem.image = UIImage(systemName: "face.smiling.fill")
        
 
         viewControllers = [
