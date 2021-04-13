@@ -76,7 +76,7 @@
         <!--View Controller-->
         <scene sceneID="5bZ-Q6-ofU">
             <objects>
-                <viewController id="YgV-ZQ-7XM" customClass="ViewController" customModule="ProyectoModulo1_5G" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialViewController" id="YgV-ZQ-7XM" customClass="ViewController" customModule="ProyectoModulo1_5G" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2k-AR-I5m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,10 +264,10 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LKJ-cx-s7h">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LKJ-cx-s7h" customClass="PhotoCollectionViewCell" customModule="ProyectoModulo1_5G" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jAf-Eb-Qzn">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jAf-Eb-Qzn" customClass="PhotoCollectionViewCell" customModule="ProyectoModulo1_5G" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
@@ -288,40 +288,59 @@
         <!--Profile View Controller-->
         <scene sceneID="wZZ-lP-4S3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yjw-Zg-3xz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProfileViewController" id="qbp-0F-apX" customClass="ProfileViewController" customModule="ProyectoModulo1_5G" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ugx-QL-nNK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3O-Uq-M3k">
-                                <rect key="frame" x="105" y="182" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-fb-GBK">
-                                <rect key="frame" x="79" y="391" width="48" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7b-zG-Lid">
-                                <rect key="frame" x="105" y="555" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-gh-O7y">
+                                <rect key="frame" x="40" y="84" width="334" height="738"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3O-Uq-M3k">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-el-1AM">
+                                        <rect key="frame" x="0.0" y="228" width="334" height="237"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k6-sg-Rhx">
+                                        <rect key="frame" x="0.0" y="565" width="334" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tst-lE-tia">
+                                        <rect key="frame" x="0.0" y="688" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JX6-I7-lpO"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign Out"/>
+                                        <connections>
+                                            <action selector="signOut:" destination="qbp-0F-apX" eventType="touchUpInside" id="fhE-yp-QiJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xna-es-NfO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xna-es-NfO" firstAttribute="bottom" secondItem="4kI-gh-O7y" secondAttribute="bottom" constant="40" id="NrI-e8-KfH"/>
+                            <constraint firstItem="4kI-gh-O7y" firstAttribute="top" secondItem="xna-es-NfO" secondAttribute="top" constant="40" id="TAJ-K1-4Nn"/>
+                            <constraint firstItem="xna-es-NfO" firstAttribute="trailing" secondItem="4kI-gh-O7y" secondAttribute="trailing" constant="40" id="TPs-sr-H9A"/>
+                            <constraint firstItem="4kI-gh-O7y" firstAttribute="leading" secondItem="xna-es-NfO" secondAttribute="leading" constant="40" id="cc1-hC-FUT"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailLabel" destination="t7b-zG-Lid" id="4et-JA-arL"/>
-                        <outlet property="nameLabel" destination="3mn-fb-GBK" id="6hN-Sk-rMS"/>
+                        <outlet property="emailLabel" destination="6k6-sg-Rhx" id="vUP-NY-2Gb"/>
+                        <outlet property="nameLabel" destination="eYA-el-1AM" id="KTm-rk-bfh"/>
                         <outlet property="profileImage" destination="z3O-Uq-M3k" id="rhg-GB-Iqz"/>
+                        <outlet property="signOutButton" destination="Tst-lE-tia" id="s5z-P4-60V"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yjw-Zg-3xz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4718.840579710145" y="150.66964285714286"/>
         </scene>
