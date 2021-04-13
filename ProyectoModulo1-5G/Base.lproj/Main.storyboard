@@ -28,7 +28,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTl-3p-PLY">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNX-bu-H2b">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
@@ -156,7 +156,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-xY-jua">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrT-RV-Ndu">
                                         <rect key="frame" x="0.0" y="280" width="334" height="50"/>
@@ -317,6 +317,9 @@
                                             <constraint firstAttribute="height" constant="50" id="AK7-a3-UmS"/>
                                         </constraints>
                                         <state key="normal" title="Change Profile Picture"/>
+                                        <connections>
+                                            <action selector="uploadPhoto:" destination="qbp-0F-apX" eventType="touchUpInside" id="O7X-cg-2Z2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tst-lE-tia">
                                         <rect key="frame" x="0.0" y="688" width="334" height="50"/>
