@@ -32,13 +32,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         getRef = Firestore.firestore()
         Auth.auth().addStateDidChangeListener{ (auth, user) in
-            self.getPhoto()
             if user == nil{
                 print("Usuario no loggeado")
             }else{
                 self.userId = user?.uid
                 self.emailLabel.text = user?.email
                 self.getName(self.userId)
+                self.getPhoto()
             }
         }
     }
@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         profileImage.addSubview(activityIndicator)
         
         let storageReference = Storage.storage().reference()
-        let userImageRef = storageReference.child("photos/").child("profile/").child("my_photo.jpg")
+        let userImageRef = storageReference.child("photos/").child("profile/").child(self.userId)
         let uploadMetadata = StorageMetadata()
         
         uploadMetadata.contentType = "image/jpeg"
@@ -108,16 +108,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func getPhoto(){
         let storageReference = Storage.storage().reference()
         let placeholder = UIImage(named: "user_icon")
-        let userImageRef = storageReference.child("photos/").child("profile/").child("TTGL.jpg")
+        let userImageRef = storageReference.child("photos/").child("profile/").child(self.userId)
                userImageRef.downloadURL{ (url, error) in
                    if let error = error{
                        print(error.localizedDescription)
                    }else{
-                       print("imagen descargada")
+                    self.profileImage.sd_setImage(with: userImageRef, placeholderImage: placeholder)
+                    
                    }
                    
                }
-               profileImage.sd_setImage(with: userImageRef, placeholderImage: placeholder)
+               
         
     }
     
