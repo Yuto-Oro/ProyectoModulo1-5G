@@ -16,11 +16,13 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImag
         super.viewDidLoad()
         self.delegate = self
         guard let PhotosControllerTemp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PhotoCollectionViewController") as? PhotoCollectionViewController else{ return }
-        let PhotosController = UINavigationController(rootViewController: PhotosControllerTemp)
+//        let PhotosController = UINavigationController(rootViewController: PhotosControllerTemp)
         
-        PhotosController.tabBarItem.title = "Fotos"
-        PhotosController.tabBarItem.image = UIImage(systemName: "doc.richtext")
         
+        PhotosControllerTemp.tabBarItem.title = "Fotos"
+        PhotosControllerTemp.tabBarItem.image = UIImage(systemName: "doc.richtext")
+        
+        photosController = PhotosControllerTemp
         
         let controller2 = NewImageViewController()
         controller2.tabBarItem.title = "Add new photo"
@@ -33,7 +35,7 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImag
        
 
         viewControllers = [
-        PhotosController,
+        PhotosControllerTemp,
         controller2,
         ProfileController
         ]
@@ -66,6 +68,9 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate, UIImag
                 print(error.localizedDescription)
             }else{
                 print("Image metadata: \(String(describing: metadata))")
+                DispatchQueue.main.async{
+                    self.photosController.getPhotos()
+                }
             }
         }
     }

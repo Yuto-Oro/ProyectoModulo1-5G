@@ -71,9 +71,11 @@ class PhotoCollectionViewController: UICollectionViewController {
           if let error = error {
             print("error \(error)")
           }
+            var tmp: [StorageReference] = []
           for item in result.items {
-            self.images.append(item)
+            tmp.append(item)
           }
+            self.images = tmp
             DispatchQueue.main.async{
                     self.collectionView.reloadData()
             }
@@ -119,7 +121,7 @@ class PhotoCollectionViewController: UICollectionViewController {
 
 extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        return CGSize(width: 180, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

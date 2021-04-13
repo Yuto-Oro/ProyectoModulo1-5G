@@ -11,7 +11,7 @@ import FirebaseUI
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     var photoView: UIImageView = {
-        let pv = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        let pv = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
         return pv
     }()
 

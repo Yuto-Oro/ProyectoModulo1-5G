@@ -14,7 +14,7 @@ import FirebaseUI
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    var userID:String!
+    var userId: String!
     var getRef: Firestore!
     
     var optimizedImage: Data!
@@ -22,35 +22,40 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var signOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Utilities.styleFilledButton(signOutButton)
 
         getRef = Firestore.firestore()
-        // Do any additional setup after loading the view.
         Auth.auth().addStateDidChangeListener{ (auth, user) in
             self.getPhoto()
             if user == nil{
                 print("Usuario no loggeado")
             }else{
-                self.userID = user?.uid
+                self.userId = user?.uid
                 self.emailLabel.text = user?.email
-                self.getName()
+                self.getName(self.userId)
             }
         }
     }
     
-    func getName(){
-        var result = getRef.collection("users").document(self.userID)
+    func getName(_ userID: String) {
+        let result = getRef.collection("users").document(userID)
         result.getDocument { (snapshot, error) in
-            print(snapshot)
-            let lastname = snapshot?.get("lastName") as! String ?? "sin valor"
+            print(snapshot!)
+            print(snapshot!.get("lastName"))
+            let lastname = snapshot?.get("lastName") as? String ?? "sin valor"
             print("documento: ", lastname)
             let name = snapshot?.get("firstName") as? String ?? "sin valor"
-            
+
             self.nameLabel.text = "\(name) \(lastname)"
             
         }
     }
+    
     @IBAction func uploadPhoto(_ sender: UIButton){
         let photoImage = UIImagePickerController()
         photoImage.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -97,7 +102,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func getPhoto(){
         let storageReference = Storage.storage().reference()
         let placeholder = UIImage(named: "user_icon")
-        let userImageRef = storageReference.child("photos/").child("profile/").child("my_photo.jpg")
+        let userImageRef = storageReference.child("photos/").child("profile/").child("TTGL.jpg")
                userImageRef.downloadURL{ (url, error) in
                    if let error = error{
                        print(error.localizedDescription)
@@ -109,5 +114,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                profileImage.sd_setImage(with: userImageRef, placeholderImage: placeholder)
         
     }
+    
+    func logOut() {
+        let initialViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.initialViewController) as? ViewController
+        view.window?.rootViewController = initialViewController
+        view.window?.makeKeyAndVisible()
+    }
 
+    @IBAction func signOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            logOut()
+        } catch let err {
+            print(err)
+        }
+    }
 }
